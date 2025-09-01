@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AYLIN 💗</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@500&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  overflow-y: auto;
+  color: #fff;
+}
+
+/* Fondo romántico */
+.fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(255,105,180,0.3), rgba(147,112,219,0.3)),
+              url('https://i.pinimg.com/736x/98/7b/f2/987bf27dfcbf6e4a62c5259228243ce1.jpg') no-repeat center center;
+  background-size: cover;
+  filter: blur(0.5px) brightness(0.9);
+  z-index: -2;
+}
+
+/* Corazones flotando */
+.corazon-fondo {
+  position: fixed;
+  width: 35px; /* tamaño uniforme */
+  height: 35px;
+  object-fit: contain; /* mantiene proporción */
+  animation: flotar linear infinite;
+  z-index: -1;
+}
+
+@keyframes flotar {
+  0% { transform: translateY(30); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(-120vh); opacity: 0; }
+}
+
+#base {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  width: 100%;
+  max-width: 800px;
+}
+
+#contador {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #FFD6F6;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+}
+
+#corazon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: margin-top 1s ease;
+}
+
+svg {
+  width: 180px;
+  height: 180px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  animation: latido 1.5s infinite;
+}
+
+svg:hover {
+  transform: scale(1.15) rotate(-3deg);
+  filter: drop-shadow(0 0 10px #ff80bf);
+}
+
+@keyframes latido {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.corazon-outline { fill: #ff9dbb; stroke: #ff2b2b; stroke-width: 2; }
+.corazon-fill { fill: #ff3366; clip-path: inset(100% 0 0 0); transition: clip-path 0.4s ease; }
+
+/* Carta */
+.carta {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255,182,193,0.4);
+  border-radius: 20px;
+  padding: 30px 25px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition: opacity 1s ease, transform 1s ease;
+  margin-top: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+@keyframes aparecer {
+  0% { transform: scale(0.8) rotate(-3deg); opacity:0; }
+  100% { transform: scale(1.02) rotate(0); opacity:1; }
+}
+
+.carta.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1.02);
+  box-shadow: 0 0 30px rgba(255,153,204,0.6);
+  animation: aparecer 0.9s ease;
+}
+
+.carta h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 40px;
+  color: #ff99cc;
+  margin-bottom: 20px;
+  text-shadow:1px 1px 6px rgba(0,0,0,0.6);
+}
+
+.carta p {
+  font-size: 18px;
+  line-height: 1.6em;
+  margin:12px 0;
+  text-shadow:1px 1px 4px rgba(0,0,0,0.6);
+}
+
+.romantico {
+  font-family: 'Great Vibes', cursive;
+  font-size: 50px !important;
+  color:#ffb6c1;
+  margin:10px 0;
+  text-shadow:0 0 10px rgba(255,192,203,0.7);
+}
+
+.marca-agua {
+  position: fixed;
+  bottom: 10px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  font-weight:bold;
+  text-shadow:1px 1px 3px rgba(0,0,0,0.3);
+}
+</style>
+</head>
+<body>
+<div class="fondo"></div>
+<div id="base">
+  <div id="contador">0%</div>
+  <div id="corazon-container">
+    <svg viewBox="0 0 100 100" id="corazon-svg">
+      <path class="corazon-outline" d="M50 90 L20 60 A15 15 0 1 1 50 30 A15 15 0 1 1 80 60 Z"/>
+      <path class="corazon-fill" d="M50 90 L20 60 A15 15 0 1 1 50 30 A15 15 0 1 1 80 60 Z"/>
+    </svg>
+    <div class="carta" id="carta">
+      <h1>Para Aylin💕</h1>
+      <p><strong>De:</strong> Edu</p>
+      <p>Holi mi princesa, qro decirte q qro q no pienses que pues no tengo interes, no qro hablar contigo y eso solo es q pues como te dije te pedi q borraras a ese y pues no lo hiciste y preferiste nomas justificar xd y eso pues si me duele pero bueno ya q puedo hacer</p>
+      <p>Te amo mucho y si quiero todo contigo y me siento afortunado en tenerte se que piensas q por tu fisico y mira eres linda y hermosa, pero vi q cuando te sientes feliz y comoda tu voz cambia eres mas linda y tierna y me encanta demasiado como eres cuando estas asi me pone muy contento</p>
+      <p>Nunca ni jamas te cambiaria, te dejaria de amar, me dejarias de interesar pq contigo quiero todo de verdad pq valoro q me ames, valoro que me expliques, valoro todo lo que haces por mi y me gusta tambien ;3</p>
+      <p>Espero de verdad no te aburras de mi porque yo si quiero todo contigo y qro q seas mi novia y esposa y todoooo por siempre y espero quieras lo mismo de mi ;b</p>
+      <p>De verdad no te miento cuando digo que quiero todo contigo y has sido la unica por la cual me he esforzado, yo de verdad qro q seas tutututuu de verdad de verdad, qro hacer todo lo posible por que seas feliz, me da miedito que te aburra de esperarme porque pues son 5 dias y los 5 voy a las 2 y salgo a las 8 por lo cual creo los unicos dias seran los lunes y viernes y jueves creo q sales mas o menos temprano tambien osea hablamos o jugamos nose y me voy a la escuela pero si me da miedo pq siento q te aburriras y pues hablaras con mas onvres o nose amorsito pero bueno te amooooo :3</p>
+      <p class="romantico">Isidora</p>
+      <p class="romantico">ily</p>
+      <p class="romantico"> <3 </p>
+      <p><em>Edu 💘</em></p>
+    </div>
+  </div>
+</div>
+<div class="marca-agua">De Edusito para Aylin 💝</div>
+
+<script>
+const fill = document.querySelector('.corazon-fill');
+const contador = document.getElementById('contador');
+const carta = document.getElementById('carta');
+const corazonContainer = document.getElementById('corazon-container');
+
+let porcentaje = 0;
+let llenando = false;
+
+function actualizarCorazon() {
+  fill.style.clipPath = `inset(${100 - porcentaje}% 0 0 0)`;
+  contador.textContent = porcentaje + '%';
+  if(porcentaje >= 100){
+    carta.classList.add('visible');
+    contador.textContent = "Corazón llenito :3";
+    corazonContainer.style.marginTop = "50px";
+  }
+}
+
+document.getElementById('corazon-svg').addEventListener('click', () => {
+  llenando = true;
+  porcentaje += 10;
+  if(porcentaje>100) porcentaje=100;
+  actualizarCorazon();
+});
+
+setInterval(() => {
+  if(!llenando && porcentaje>0 && porcentaje<100){
+    porcentaje -= 1;
+    if(porcentaje<0) porcentaje=0;
+    actualizarCorazon();
+  }
+  llenando=false;
+},100);
+
+// Corazones flotantes con imágenes
+const imagenes = [
+  'https://www.pngmart.com/files/16/Pink-Kitty-Transparent-Background.png',
+  'https://www.pngmart.com/files/16/Kitty-PNG-Image.png',
+  'https://www.pngmart.com/files/16/Hello-Kitty-Transparent-PNG.png',
+  'https://www.pngall.com/wp-content/uploads/13/Hello-Kitty-Background-PNG.png'
+];
+
+for(let i=0; i<25; i++){ // más corazones
+  const c = document.createElement('img');
+  c.className = 'corazon-fondo';
+  c.src = imagenes[Math.floor(Math.random()*imagenes.length)];
+  c.style.left = Math.random()*100 + '%';
+  c.style.bottom = '-50px'; // empiecen fuera de la pantalla
+  c.style.opacity = 0; // invisibles al inicio
+  const duracion = (4 + Math.random()*4) + 's';
+  const retraso = Math.random()*5 + 's';
+  c.style.animation = `flotar ${duracion} linear ${retraso} infinite`;
+  document.body.appendChild(c);
+}
+</script>
+</body>
+</html>
